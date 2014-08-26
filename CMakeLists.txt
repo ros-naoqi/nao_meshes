@@ -11,7 +11,7 @@ set(TMP_DIR ${CATKIN_DEVEL_PREFIX}/tmp)
 
 set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
 
-file(DOWNLOAD "https://github.com/vrabaud/nao_meshes_generator/raw/master/binaries/naomeshes-0.6.3-linux-x64-installer.run"
+file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.3-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   EXPECTED_MD5 db6cfe8d45f8c002dc8dcffd29c148ea
 )
@@ -39,6 +39,7 @@ set(INSTALLER_PATH ${TMP_DIR}/installer.run)
 add_custom_target(${PROJECT_NAME}_meshes
   COMMAND ${INSTALLER_PATH} --mode text --prefix ${TMP_DIR}
   COMMAND cp -fr ${TMP_MESH_PATH}/ ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}
+  COMMAND rm -fr ${TMP_DIR}/rollback*
 )
 
 # uncompress the meshes during install

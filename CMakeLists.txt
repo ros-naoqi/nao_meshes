@@ -25,7 +25,7 @@ file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomes
 set(TMP_MESH_PATH ${TMP_DIR}/nao_meshes/meshes)
 
 # final path in devel/install space
-set(FINAL_MESH_PATH ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes)
+set(FINAL_MESH_PATH ${CATKIN_GLOBAL_SHARE_DESTINATION}/nao_description/meshes)
 
 # make the file executable to install
 file(COPY ${INSTALLER_TMP_PATH}
@@ -38,7 +38,8 @@ set(INSTALLER_PATH ${TMP_DIR}/installer.run)
 # add a target for devel space
 add_custom_target(${PROJECT_NAME}_meshes
   COMMAND ${INSTALLER_PATH} --mode text --prefix ${TMP_DIR}
-  COMMAND cp -fr ${TMP_MESH_PATH}/ ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}
+  COMMAND mkdir -p ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}
+  COMMAND cp -fr ${TMP_MESH_PATH}/* ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}/
   COMMAND rm -fr ${TMP_DIR}/rollback*
 )
 

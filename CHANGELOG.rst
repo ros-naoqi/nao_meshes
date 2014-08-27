@@ -2,8 +2,8 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.1 (2014-08-27)
+------------------
 * rename the templates file
 * install the meshes to nao_description for now
 * get the proper URL for the installer, and devel cleanups

@@ -13,6 +13,7 @@ set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
 
 file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.3-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
+  INACTIVITY_TIMEOUT 60
   EXPECTED_MD5 db6cfe8d45f8c002dc8dcffd29c148ea
 )
 # whenever there is a new binary, update th MD5 above by commenting out

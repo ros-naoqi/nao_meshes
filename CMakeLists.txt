@@ -11,15 +11,19 @@ set(TMP_DIR ${CATKIN_DEVEL_PREFIX}/tmp)
 
 set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
 
-file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.3-linux-x64-installer.run"
+if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
+file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.4-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 db6cfe8d45f8c002dc8dcffd29c148ea
+  EXPECTED_MD5 6513ce0ca155ba03876ca2924e556203
 )
-# whenever there is a new binary, update th MD5 above by commenting out
-# the EXPECTED_MD5 line above and using the one below to get the new MD5
-#file(MD5 ${INSTALLER_TMP_PATH} INSTALLER_MD5)
-#message(INFO "MD5: ${INSTALLER_MD5}")
+else()
+file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.4-linux-installer.run"
+  ${INSTALLER_TMP_PATH} SHOW_PROGRESS
+  INACTIVITY_TIMEOUT 60
+  EXPECTED_MD5 1804d6dbccf9cf3d5367ed44a5d3bb75
+)
+endif()
 
 # specify the interesting folder in the archive. You might want to change
 # that for a new binary where the structure is different

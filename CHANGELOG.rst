@@ -2,6 +2,14 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* handle 32 bit and use the 0.6.4 archive
+* add an inactivity timeout (to maybe solve quantal issues)
+* add java dependency as the installer uses java
+* the license should reflect the content not the code
+* Contributors: Vincent Rabaud
+
 0.1.1 (2014-08-27)
 ------------------
 * rename the templates file

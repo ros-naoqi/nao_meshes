@@ -12,12 +12,14 @@ set(TMP_DIR ${CATKIN_DEVEL_PREFIX}/tmp)
 set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
 
 if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
+message(STATUS "Downloading 64 bit installer")
 file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.4-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
   EXPECTED_MD5 6513ce0ca155ba03876ca2924e556203
 )
 else()
+message(STATUS "Downloading 32 bit installer")
 file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.4-linux-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
@@ -63,6 +65,17 @@ message(STATUS \"install error: ${ERROR}\")
 message(STATUS \"install result: ${RESULT}\")
 "
 )
+
+execute_process(COMMAND ls ${TMP_DIR}
+                OUTPUT_VARIABLE OUT
+)
+message(STATUS "ls out: ${OUT}")
+
+execute_process(COMMAND file ${TMP_DIR}/installer.run
+                OUTPUT_VARIABLE OUT
+)
+message(STATUS "file out: ${OUT}")
+
 # install the archive
 install(DIRECTORY ${TMP_MESH_PATH}/
         DESTINATION ${FINAL_MESH_PATH}/

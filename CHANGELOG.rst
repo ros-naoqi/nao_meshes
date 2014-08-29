@@ -2,8 +2,8 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.2 (2014-08-29)
+------------------
 * handle 32 bit and use the 0.6.4 archive
 * add an inactivity timeout (to maybe solve quantal issues)
 * add java dependency as the installer uses java

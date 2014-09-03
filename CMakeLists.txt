@@ -11,7 +11,7 @@ set(TMP_DIR ${CATKIN_DEVEL_PREFIX}/tmp)
 
 set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
 
-if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
+if (${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86_64")
 message(STATUS "Downloading 64 bit installer")
 file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.5-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS

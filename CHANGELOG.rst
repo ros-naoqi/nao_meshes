@@ -2,6 +2,12 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* installer 0.6.5 and better debug info for 32 bits
+* add debug symbols ...
+* Contributors: Vincent Rabaud
+
 0.1.2 (2014-08-29)
 ------------------
 * handle 32 bit and use the 0.6.4 archive

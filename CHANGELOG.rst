@@ -2,8 +2,8 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.4 (2014-09-03)
+------------------
 * last try to fix 32 bit
 * Contributors: Vincent Rabaud
 

@@ -13,26 +13,26 @@ set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
 
 if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
 message(STATUS "Downloading 64 bit installer")
-file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.4-linux-x64-installer.run"
+file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.5-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 6513ce0ca155ba03876ca2924e556203
+  EXPECTED_MD5 e87c944737a4332fdb8d418f30f295b1
 )
 else()
 message(STATUS "Downloading 32 bit installer")
-file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.4-linux-installer.run"
+file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.5-linux-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 1804d6dbccf9cf3d5367ed44a5d3bb75
+  EXPECTED_MD5 5ae7e6b2d0810514f44826a4daabcab5
 )
 endif()
 
 # specify the interesting folder in the archive. You might want to change
 # that for a new binary where the structure is different
-set(TMP_MESH_PATH ${TMP_DIR}/nao_meshes/meshes)
+set(TMP_MESH_PATH ${TMP_DIR}/nao_meshes/)
 
 # final path in devel/install space
-set(FINAL_MESH_PATH ${CATKIN_GLOBAL_SHARE_DESTINATION}/nao_description/meshes)
+set(FINAL_MESH_PATH ${CATKIN_GLOBAL_SHARE_DESTINATION}/nao_description/)
 
 # make the file executable to install
 file(COPY ${INSTALLER_TMP_PATH}
@@ -60,21 +60,30 @@ execute_process(COMMAND ${INSTALLER_PATH} --mode unattended --prefix ${TMP_DIR}
                 ERROR_VARIABLE ERROR
                 RESULT_VARIABLE RESULT
 )
-message(STATUS \"intall out: ${OUT}\")
-message(STATUS \"install error: ${ERROR}\")
-message(STATUS \"install result: ${RESULT}\")
-"
-)
+message(STATUS \"intall out: \${OUT}\")
+message(STATUS \"install error: \${ERROR}\")
+message(STATUS \"install result: \${RESULT}\")
 
-execute_process(COMMAND ls ${TMP_DIR}
-                OUTPUT_VARIABLE OUT
+execute_process(COMMAND ls
+                WORKING_DIRECTORY ${TMP_DIR}
+                OUTPUT_VARIABLE OUT_LS
+                ERROR_VARIABLE ERROR_LS
+                RESULT_VARIABLE RESULT_LS
 )
-message(STATUS "ls out: ${OUT}")
+message(STATUS \"ls out: \${OUT_LS}\")
+message(STATUS \"ls error: \${ERROR_LS}\")
+message(STATUS \"ls result: \${RESULT_LS}\")
 
 execute_process(COMMAND file ${TMP_DIR}/installer.run
-                OUTPUT_VARIABLE OUT
+                OUTPUT_VARIABLE OUT_FILE
+                ERROR_VARIABLE ERROR_FILE
+                RESULT_VARIABLE RESULT_FILE
 )
-message(STATUS "file out: ${OUT}")
+message(STATUS \"file out: \${OUT_FILE}\")
+message(STATUS \"file error: \${ERROR_FILE}\")
+message(STATUS \"file result: \${RESULT_FILE}\")
+"
+)
 
 # install the archive
 install(DIRECTORY ${TMP_MESH_PATH}/

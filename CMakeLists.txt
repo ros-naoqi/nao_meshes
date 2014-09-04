@@ -11,7 +11,19 @@ set(TMP_DIR ${CATKIN_DEVEL_PREFIX}/tmp)
 
 set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
 
+# Try to figure out the architecture
+string(FIND ${CATKIN_DEVEL_PREFIX} "i686" IS_32)
+message(STATUS "Architecture is apparently 32 (-1 for no): ${IS_32}")
+if(${IS_32} STREQUAL "-1")
+# Trust CMAKE_SYSTEM_PROCESSOR which does not work on the farm
 if (${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86_64")
+set(IS_32 FALSE)
+else()
+set(IS_32 TRUE)
+endif()
+endif()
+
+if (NOT ${IS_32})
 message(STATUS "Downloading 64 bit installer")
 file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.5-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS

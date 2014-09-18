@@ -44,7 +44,7 @@ endif()
 set(TMP_MESH_PATH ${TMP_DIR}/nao_meshes/)
 
 # final path in devel/install space
-set(FINAL_MESH_PATH ${CATKIN_GLOBAL_SHARE_DESTINATION}/nao_description/)
+set(FINAL_MESH_PATH ${CATKIN_GLOBAL_SHARE_DESTINATION}/${PROJECT_NAME}/)
 
 # make the file executable to install
 file(COPY ${INSTALLER_TMP_PATH}

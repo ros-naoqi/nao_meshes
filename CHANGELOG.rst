@@ -2,6 +2,9 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.5 (2014-09-04)
 ------------------
 * new way of finding the architecture

@@ -25,17 +25,19 @@ endif()
 
 if (NOT ${IS_32})
 message(STATUS "Downloading 64 bit installer")
-file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.5-linux-x64-installer.run"
+file(DOWNLOAD
+"https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.6-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 e87c944737a4332fdb8d418f30f295b1
+  EXPECTED_MD5 d29edbcc8947070507488340840ef993 
 )
 else()
 message(STATUS "Downloading 32 bit installer")
-file(DOWNLOAD "https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.5-linux-installer.run"
+file(DOWNLOAD
+"https://github.com/ros-nao/nao_meshes_installer/raw/master/naomeshes-0.6.6-linux-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 5ae7e6b2d0810514f44826a4daabcab5
+  EXPECTED_MD5 ae990cbfe6fca7190643e5f154a4aaf3 
 )
 endif()
 

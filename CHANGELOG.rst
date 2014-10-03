@@ -4,6 +4,9 @@ Changelog for package nao_meshes
 
 Forthcoming
 -----------
+* update MD5 for 0.6.6 installer
+* add a changelog
+* Contributors: Vincent Rabaud, margueda
 
 0.1.5 (2014-09-04)
 ------------------

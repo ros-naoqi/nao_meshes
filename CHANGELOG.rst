@@ -2,8 +2,8 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.8 (2014-11-27)
+------------------
 * update md5 for 0.6.7 installers
 * Update README
 * Contributors: Mikael ARGUEDAS, Vincent Rabaud

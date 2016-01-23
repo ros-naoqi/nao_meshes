@@ -29,7 +29,7 @@ file(DOWNLOAD
 "https://github.com/ros-naoqi/nao_meshes_installer/raw/master/naomeshes-0.6.7-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 118f7312bc5476f9964f1681280b2e07
+  EXPECTED_MD5 5f897a3328f217bae6c0ed2a934e524c
 )
 else()
 message(STATUS "Downloading 32 bit installer")
@@ -37,7 +37,7 @@ file(DOWNLOAD
 "https://github.com/ros-naoqi/nao_meshes_installer/raw/master/naomeshes-0.6.7-linux-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 7c5fb4345ebf05d7f5dde8ebc82d1612
+  EXPECTED_MD5 1984b2790930044b4ee00496315c0021
 )
 endif()
 

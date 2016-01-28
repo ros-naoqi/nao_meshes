@@ -3,7 +3,7 @@
   <version>0.1.10</version>
   <description>meshes for the Aldebaran Robotics NAO</description>
   <author email="vincent.rabaud@gmail.com">Vincent Rabaud</author>
-  <maintainer email="vincent.rabaud@gmail.com">Vincent Rabaud</maintainer>
+  <maintainer email="mikael.arguedas@gmail.com">Mikael Arguedas</maintainer>
   <license>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License</license>
 
   <url>http://github.com/vrabaud/nao_meshes/</url>

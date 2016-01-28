@@ -2,8 +2,8 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.10 (2016-01-28)
+-------------------
 * fixed folder name in CMakeLists
 * Contributors: Mikael Arguedas
 

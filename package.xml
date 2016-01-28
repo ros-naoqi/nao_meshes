@@ -1,6 +1,6 @@
 <package>
   <name>nao_meshes</name>
-  <version>0.1.9</version>
+  <version>0.1.10</version>
   <description>meshes for the Aldebaran Robotics NAO</description>
   <author email="vincent.rabaud@gmail.com">Vincent Rabaud</author>
   <maintainer email="vincent.rabaud@gmail.com">Vincent Rabaud</maintainer>

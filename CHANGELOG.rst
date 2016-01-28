@@ -2,6 +2,11 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixed folder name in CMakeLists
+* Contributors: Mikael Arguedas
+
 0.1.9 (2016-01-24)
 ------------------
 * update MD5 checksum for new installers

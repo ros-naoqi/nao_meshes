@@ -43,7 +43,8 @@ endif()
 
 # specify the interesting folder in the archive. You might want to change
 # that for a new binary where the structure is different
-set(TMP_MESH_PATH ${TMP_DIR}/nao_meshes/)
+set(TMP_MESH_PATH ${TMP_DIR}/meshes/)
+set(TMP_TEXTURE_PATH ${TMP_DIR}/texture/)
 
 # final path in devel/install space
 set(FINAL_MESH_PATH ${CATKIN_GLOBAL_SHARE_DESTINATION}/${PROJECT_NAME}/)
@@ -61,6 +62,7 @@ add_custom_target(${PROJECT_NAME}_meshes
   COMMAND ${INSTALLER_PATH} --mode text --prefix ${TMP_DIR}
   COMMAND mkdir -p ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}
   COMMAND cp -fr ${TMP_MESH_PATH}/* ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}/
+  COMMAND cp -fr ${TMP_TEXTURE_PATH}/* ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}/
   COMMAND rm -fr ${TMP_DIR}/rollback*
 )
 

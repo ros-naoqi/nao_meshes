@@ -2,8 +2,8 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.11 (2016-02-03)
+-------------------
 * fixed folder path + added install rule for texture folder
 * Update package.xml
   added myself as a maintainer as requested by vrabaud

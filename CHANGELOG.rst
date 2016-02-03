@@ -2,6 +2,13 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixed folder path + added install rule for texture folder
+* Update package.xml
+  added myself as a maintainer as requested by vrabaud
+* Contributors: Arguedas Mikael, Mikael Arguedas
+
 0.1.10 (2016-01-28)
 -------------------
 * fixed folder name in CMakeLists

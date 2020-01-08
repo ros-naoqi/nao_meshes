@@ -2,8 +2,8 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.12 (2020-01-08)
+-------------------
 * add Maxime Busy as maintainer (`#7 <https://github.com/ros-naoqi/nao_meshes/issues/7>`_)
 * update maintainer (`#5 <https://github.com/ros-naoqi/nao_meshes/issues/5>`_)
 * Contributors: Maxime Busy, Mikael Arguedas

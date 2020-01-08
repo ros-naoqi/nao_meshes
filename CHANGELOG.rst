@@ -2,6 +2,12 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add Maxime Busy as maintainer (`#7 <https://github.com/ros-naoqi/nao_meshes/issues/7>`_)
+* update maintainer (`#5 <https://github.com/ros-naoqi/nao_meshes/issues/5>`_)
+* Contributors: Maxime Busy, Mikael Arguedas
+
 0.1.11 (2016-02-03)
 -------------------
 * fixed folder path + added install rule for texture folder

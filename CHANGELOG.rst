@@ -2,8 +2,8 @@
 Changelog for package nao_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.13 (2022-09-07)
+-------------------
 * Update ERROR_FILE to ERROR_FILE_CMD in CMakeLists to avoid build crash
 * Contributors: mbusy
 

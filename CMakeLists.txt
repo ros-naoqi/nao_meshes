@@ -8,7 +8,7 @@ find_package(ament_cmake REQUIRED)
 
 set(TMP_DIR ${CMAKE_CURRENT_BINARY_DIR}/tmp)
 
-set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
+set(INSTALLER_PATH ${TMP_DIR}/installer.run)
 
 # Try to figure out the architecture
 string(FIND ${CMAKE_CURRENT_BINARY_DIR} "i686" IS_32)
@@ -26,7 +26,7 @@ if (NOT ${IS_32})
 message(STATUS "Downloading 64 bit installer")
 file(DOWNLOAD
 "https://github.com/ros-naoqi/nao_meshes_installer/raw/master/naomeshes-0.6.7-linux-x64-installer.run"
-  ${INSTALLER_TMP_PATH} SHOW_PROGRESS
+  ${INSTALLER_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
   EXPECTED_MD5 5f897a3328f217bae6c0ed2a934e524c
 )
@@ -34,7 +34,7 @@ else()
 message(STATUS "Downloading 32 bit installer")
 file(DOWNLOAD
 "https://github.com/ros-naoqi/nao_meshes_installer/raw/master/naomeshes-0.6.7-linux-installer.run"
-  ${INSTALLER_TMP_PATH} SHOW_PROGRESS
+  ${INSTALLER_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
   EXPECTED_MD5 1984b2790930044b4ee00496315c0021
 )
@@ -49,18 +49,12 @@ set(TMP_TEXTURE_PATH ${TMP_DIR}/texture)
 # relative to the share folder of the package.
 set(INSTALL_DESTINATION_IN_SHARE ${PROJECT_NAME})
 
-# make the file executable to install
-file(COPY ${INSTALLER_TMP_PATH}
-     FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
-     DESTINATION ${TMP_DIR}
-)
-
-set(INSTALLER_PATH ${TMP_DIR}/installer.run)
-
 # install the meshes in the build directory when building
-add_custom_target(${PROJECT_NAME}_meshes
-  COMMAND ${INSTALLER_PATH} --mode text --prefix ${TMP_DIR}
-  COMMAND rm -fr ${TMP_DIR}/rollback*
+message(STATUS "Unpacking meshes from the installer: \n${INSTALLER_PATH} --mode unattended --prefix ${TMP_DIR}")
+execute_process(
+  COMMAND chmod +x ${INSTALLER_PATH}
+  COMMAND ${INSTALLER_PATH} --mode unattended --prefix ${TMP_DIR}
+  COMMAND_ERROR_IS_FATAL ANY
 )
 
 # uncompress the meshes during install

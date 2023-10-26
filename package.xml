@@ -13,8 +13,6 @@
 
   <url>http://github.com/ros-naoqi/nao_meshes/</url>
 
-  <build_depend>java</build_depend>
-
   <buildtool_depend>ament_cmake</buildtool_depend>
   <export>
     <build_type>ament_cmake</build_type>

@@ -1,7 +1,7 @@
 <package>
   <name>nao_meshes</name>
   <version>0.1.13</version>
-  <description>meshes for the Aldebaran Robotics NAO</description>
+  <description>Meshes of NAO, by Aldebaran</description>
   <author email="vincent.rabaud@gmail.com">Vincent Rabaud</author>
   <author email="mikael.arguedas@gmail.com">Mikael Arguedas</author>
 
@@ -18,5 +18,4 @@
   <export>
     <build_type>ament_cmake</build_type>
   </export>
-
 </package>
